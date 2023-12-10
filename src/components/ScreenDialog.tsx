@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Stack from '@mui/material/Stack'
 import uuid from 'uuid'
 
-import { useForm, SubmitHandler, Controller } from 'react-hook-form'
+import { useForm, SubmitHandler, Controller, FieldError } from 'react-hook-form'
 import { useAppSelector } from '../hooks/useAppSelector'
 import {
   selectScreenDialog,
@@ -139,7 +139,9 @@ const ScreenDialog = () => {
               label="Screen name"
               color="secondary"
               error={!!errors.name}
-              helperText={!!errors.name && errorMessage(errors.name)}
+              helperText={
+                !!errors.name && errorMessage(errors.name as FieldError)
+              }
               {...register('name', {
                 required: true,
               })}
@@ -161,7 +163,9 @@ const ScreenDialog = () => {
                   required: true,
                 })}
                 error={!!errors.width}
-                helperText={!!errors.width && errorMessage(errors.width)}
+                helperText={
+                  !!errors.width && errorMessage(errors.width as FieldError)
+                }
               />
 
               <TextField
@@ -179,7 +183,9 @@ const ScreenDialog = () => {
                   required: true,
                 })}
                 error={!!errors.height}
-                helperText={!!errors.height && errorMessage(errors.height)}
+                helperText={
+                  !!errors.height && errorMessage(errors.height as FieldError)
+                }
               />
               {!!screen?.originalSize && (
                 <Button
@@ -208,7 +214,8 @@ const ScreenDialog = () => {
                       {...field}
                       error={!!errors.userAgent}
                       helperText={
-                        !!errors.userAgent && errorMessage(errors.userAgent)
+                        !!errors.userAgent &&
+                        errorMessage(errors.userAgent as FieldError)
                       }
                       InputProps={{
                         endAdornment: (

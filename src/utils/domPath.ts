@@ -1,6 +1,6 @@
 //https://gist.github.com/karlgroves/7544592
 function getDomPath(el: HTMLElement) {
-  const stack = []
+  const stack = [] as string[]
 
   while (el.parentElement != null) {
     let sibCount = 0

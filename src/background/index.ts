@@ -283,7 +283,11 @@ const start = (tab: chrome.tabs.Tab) => {
 
   chrome.webRequest.onBeforeSendHeaders.addListener(
     onBeforeSendHeaders,
-    { urls: ['<all_urls>'], types: ['sub_frame'], tabId: tab.id },
+    {
+      urls: ['<all_urls>'],
+      types: ['sub_frame', 'xmlhttprequest'],
+      tabId: tab.id,
+    },
     ['blocking', 'requestHeaders']
   )
 }

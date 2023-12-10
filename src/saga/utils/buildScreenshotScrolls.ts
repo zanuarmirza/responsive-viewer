@@ -5,7 +5,7 @@ type Box = {
   height: number
 }
 export const buildScreenshotScrolls = (box: Box, parent: Box) => {
-  const result = []
+  const result = [] as { x: number; y: number; width: number; height: number }[]
 
   for (let y = 0; y < box.height; y += parent.height) {
     let captureHeight = box.height

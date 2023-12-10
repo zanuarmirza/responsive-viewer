@@ -10,7 +10,7 @@ import {
   selectUserAgentDialog,
   toggleUserAgentDialog,
 } from '../reducers/layout'
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm, SubmitHandler, FieldError } from 'react-hook-form'
 import { UserAgent } from '../types'
 import { saveUserAgent, selectUserAgents } from '../reducers/app'
 import * as validation from '../utils/validation'
@@ -67,7 +67,8 @@ const UserAgentDialog = () => {
               color="secondary"
               error={!!errors.name}
               helperText={
-                !!errors.name && errorMessage(errors.name, 'User agent')
+                !!errors.name &&
+                errorMessage(errors.name as FieldError, 'User agent')
               }
               {...register('name', {
                 required: true,
@@ -87,7 +88,7 @@ const UserAgentDialog = () => {
               error={!!errors.value}
               helperText={
                 !!errors.value &&
-                errorMessage(errors.value, 'User agent header')
+                errorMessage(errors.value as FieldError, 'User agent header')
               }
               {...register('value', {
                 required: true,
