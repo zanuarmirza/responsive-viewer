@@ -1,5 +1,8 @@
 # Responsive Viewer Chrome extension
 
+## Changes
+Replacing userAgent on `xmlhttprequest`   
+
 <img src="https://responsiveviewer.org/logo.png" alt="drawing" width="80"/>
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/inmopeiepgfljkpkidclfgbgbmfcennb.svg?style=for-the-badge&label=Chrome%20users&ogo=google-chrome&logoColor=white)][chrome]
